@@ -10,7 +10,7 @@ export const Title = () => {
   return (
     <a href="/">
       {" "}
-      <img className="h-24 p-2 pl-8" src={require("../Images/FoodVilla.jpeg")} alt="" />
+      <img className="h-24 p-2 pl-8" src="https://static.vecteezy.com/system/resources/previews/019/909/633/original/mcdonald-s-transparent-mcdonald-s-free-free-png.png"alt="" />
     </a>
   );
 }; //name export

@@ -50,7 +50,7 @@ const Applayout = () => {
         <Header />
         {/* <Search/> */}
         <Outlet />
-        <Footer/>
+     
       </info1.Provider>
     </Provider>
   );

@@ -561,9 +561,8 @@ a:visited {
 }
 
 #menu {
-  width: 70%;
   min-height: 100%;
-  margin: 0 auto;
+  margin: 0 1rem;
 }
 
 #menu-top img {
@@ -598,14 +597,6 @@ a:visited {
   position: relative;
 }
 
-#menu-card-right img {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 10px;
-  width: 11vw;
-  height: 20vh;
-}
-
 #menu-card-right div {
   color: #60b246;
   background-color: #fff;
@@ -621,8 +612,7 @@ a:visited {
   font-weight: 600;
   display: flex;
   position: absolute;
-  bottom: -7%;
-  left: 50%;
+  left: 12vw;
   transform: translateX(-50%);
 }
 
@@ -939,6 +929,37 @@ label span {
 
   .skeleton-card {
     width: 100%;
+  }
+}
+
+#loader-element {
+  background: #ffdaad;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+#loader-element:after {
+  content: "";
+  background: linear-gradient(#ffffffca, #f4efef, #ffffffca);
+  width: 100%;
+  height: 100%;
+  animation: 1.5s infinite Change;
+  position: absolute;
+  transform: rotate(90deg);
+}
+
+@keyframes Change {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
   }
 }
 

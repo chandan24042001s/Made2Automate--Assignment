@@ -44,15 +44,39 @@ const RestaurantMenu = () => {
   
     return (
       <div id="menu">
-        <div className="flex">
+
+        <img className="mt-4" src="https://d37byfojjwz7vp.cloudfront.net/new_resize_1440_1704451151811534.jpeg" alt="" />
+        <div className="flex justify-around h-[10rem] bg-Skin py-10">
+          <div>
+            <h1 className="text-4xl mb-2">Our Menu</h1>
+            <div className="flex gap-2">
+              <div className="flex shadow-lg px-4 py-2 rounded-3xl bg-White hover:bg-Red">
+                <img src="https://hrpl-production-mds-assets.s3.ap-south-1.amazonaws.com/icons/deal.svg" alt="" />
+                <span className="ml-2">Popular</span>
+              </div>
+              <div className="flex shadow-lg px-4 py-2 rounded-3xl bg-White hover:bg-Red ">
+                <img src="https://hrpl-production-mds-assets.s3.ap-south-1.amazonaws.com/icons/new-launch.svg" alt="" />
+                <span className="ml-2">Delas</span>
+              </div>
+              <div className="flex shadow-lg px-4 py-2 rounded-3xl bg-White hover:bg-Red ">
+              <img src="https://hrpl-production-mds-assets.s3.ap-south-1.amazonaws.com/icons/trending.svg" alt="" />
+                <span className="ml-2">New launch</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex">
+            <input type="text" placeholder="Search here" className="w-[20rem] h-[3rem] rounded-lg border border-Black px-4" />
+            {/* <img  className="h-5 pt-3" src="https://hrpl-production-mds-assets.s3.ap-south-1.amazonaws.com/images/search.svg" alt="" /> */}
+          </div>
+        </div>
+        <div className="flex w-screen justify-between items-center">
         <div id="menu-top">
-          <img className="rounded-lg" src={swiggyIMageCDN + cloudinaryImageId} alt="" />
           <h1>{name}</h1>
           <h3>{cuisines?.join(", ")}</h3>
           <h3>{locality}</h3>
         </div>
 
-        <div id="veg-only-button" className="self-end">
+        <div id="veg-only-button" className="">
             <div id="slider">
               <div
                 onClick={() => {
@@ -80,7 +104,6 @@ const RestaurantMenu = () => {
   
         <div >
   
-          <ul >
             {categoryFiltered?.map((c, index) => {
               return (
                 // Controlled Component
@@ -97,7 +120,6 @@ const RestaurantMenu = () => {
                 />
               );
             })}
-          </ul>
         </div>
       </div>
     );  
