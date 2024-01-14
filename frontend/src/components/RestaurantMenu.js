@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
   });
   const { id } = useParams();
   const [showIndex, setShowIndex] = useState(null);
-   const resInfo = useRestaurantMenu(254009);
+   const resInfo = useRestaurantMenu(id);
    const [expandedSection, setExpandedSection] = useState(null);
 
   const dummy = "Dummy Data";

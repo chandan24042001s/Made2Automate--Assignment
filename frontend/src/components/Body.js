@@ -11,7 +11,7 @@ import { info1 } from "../utils/userContext";
 const Body = () => {
   // let searchTXT="KFC";
   /** Every Component in react maintains a state*/
-  const [searchTXT, setSearchTXT] = useState();
+  const [searchTXT, setSearchTXT] = useState("McDonald's");
   const [restraunts, setRestraunts] = useState([]);
   const [searchResult, setSearchResult] = useState(true);
   const [filteredRestraunts, setFilteredRestraunts] = useState([]);
@@ -65,7 +65,7 @@ const resData = await checkJsonData(json);
 
   const handleSearch = (event) => {
     const searchResult = event.target.value.toLowerCase();
-    setSearchTXT(searchResult);
+   
 
     const filtered = allRestraunts.filter((restaurant) =>
       restaurant.info.name.toLowerCase().includes(searchResult)
@@ -103,11 +103,9 @@ const resData = await checkJsonData(json);
         </button>
       </div>
       <div className="flex flex-wrap-reverse w-screen">
-        {filteredRestraunts && filteredRestraunts.map((restraunt, index) => (
-          <Link to={"/restaurant/"}>
-            <RestrauntCard key={restraunt?.info?.id} {...restraunt.info} />
+          <Link to={"/restaurant/"+resId}>
+            <RestrauntCard  />
           </Link>
-        ))}
       </div>
     </div>
   );

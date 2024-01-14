@@ -26,11 +26,11 @@ const RestaurantCategory = (props) => {
       <div className="flex h-14  ">
         {/* left list container */}
         <div>
-          <div className="flex w-[300px] h-[50px]  flex-col ">
+          <div className="flex w-[300px] h-[50px]  flex-col cursor-pointer ">
             <h1 htmlFor={title} onClick={handleClick}>
               {title}
-              <span>
-                <i className="ri-arrow-down-s-line"></i>
+              <span className="ml-2 bg-Green h-[3rem] p-2 rounded-lg shadow-lg text-White">
+                Click to View
               </span>
             </h1>
           </div>

@@ -3031,20 +3031,20 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Applayout, {}, void 0, false, {
             fileName: "src/utils/App.js",
-            lineNumber: 62,
+            lineNumber: 61,
             columnNumber: 14
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/utils/App.js",
-            lineNumber: 63,
+            lineNumber: 62,
             columnNumber: 19
         }, undefined),
         children: [
             {
                 path: "/",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 67,
+                    lineNumber: 66,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3052,7 +3052,7 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 71,
+                    lineNumber: 70,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3060,15 +3060,15 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 75,
+                    lineNumber: 74,
                     columnNumber: 18
                 }, undefined)
             },
             {
-                path: "/restaurant",
+                path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 79,
+                    lineNumber: 78,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3076,7 +3076,7 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 83,
+                    lineNumber: 82,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3084,7 +3084,7 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/login",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginDefault.default), {}, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 87,
+                    lineNumber: 86,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3094,12 +3094,12 @@ const AppRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/utils/App.js",
-                        lineNumber: 94,
+                        lineNumber: 93,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/utils/App.js",
-                    lineNumber: 93,
+                    lineNumber: 92,
                     columnNumber: 11
                 }, undefined)
             }
@@ -3111,7 +3111,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: AppRouter
 }, void 0, false, {
     fileName: "src/utils/App.js",
-    lineNumber: 104,
+    lineNumber: 103,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -35876,7 +35876,7 @@ var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     // let searchTXT="KFC";
-    /** Every Component in react maintains a state*/ const [searchTXT, setSearchTXT] = (0, _react.useState)();
+    /** Every Component in react maintains a state*/ const [searchTXT, setSearchTXT] = (0, _react.useState)("McDonald's");
     const [restraunts, setRestraunts] = (0, _react.useState)([]);
     const [searchResult, setSearchResult] = (0, _react.useState)(true);
     const [filteredRestraunts, setFilteredRestraunts] = (0, _react.useState)([]);
@@ -35916,7 +35916,6 @@ const Body = ()=>{
     };
     const handleSearch = (event)=>{
         const searchResult = event.target.value.toLowerCase();
-        setSearchTXT(searchResult);
         const filtered = allRestraunts.filter((restaurant)=>restaurant.info.name.toLowerCase().includes(searchResult));
         if (filtered.length > 0) setFilteredRestraunts(filtered);
         else // If the search result is empty, show all restaurants
@@ -35980,20 +35979,18 @@ const Body = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex flex-wrap-reverse w-screen",
-                children: filteredRestraunts && filteredRestraunts.map((restraunt, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/restaurant/",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrauntCardDefault.default), {
-                            ...restraunt.info
-                        }, restraunt?.info?.id, false, {
-                            fileName: "src/components/Body.js",
-                            lineNumber: 108,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: "/restaurant/" + resId,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrauntCardDefault.default), {}, void 0, false, {
                         fileName: "src/components/Body.js",
                         lineNumber: 107,
-                        columnNumber: 11
-                    }, undefined))
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/Body.js",
+                    lineNumber: 106,
+                    columnNumber: 11
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
                 lineNumber: 105,
@@ -36006,7 +36003,7 @@ const Body = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "WGWVUzZIbej24GnO3+Qs/+XPKVA=", false, function() {
+_s(Body, "1EAO+yCx33r0uhr7Vf/APFzGuY4=", false, function() {
     return [
         (0, _useOnlineDefault.default)
     ];
@@ -36641,7 +36638,7 @@ var _constant = require("../../constant");
 var _userContext = require("../utils/userContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _s = $RefreshSig$();
-const RestrauntCard = (props)=>{
+const RestrauntCard = ()=>{
     _s();
     const { user } = (0, _react.useContext)((0, _userContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36651,7 +36648,7 @@ const RestrauntCard = (props)=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     className: "h-[160px] w-72 rounded-2xl",
-                    src: (0, _constant.swiggyIMageCDN) + props.cloudinaryImageId
+                    src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6dc3ed2ca21d71acff7c2a51dfe4c720"
                 }, void 0, false, {
                     fileName: "src/components/RestrauntCard.js",
                     lineNumber: 10,
@@ -36659,7 +36656,7 @@ const RestrauntCard = (props)=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     className: "font-bold text-lg",
-                    children: props.name
+                    children: "McDonald's"
                 }, void 0, false, {
                     fileName: "src/components/RestrauntCard.js",
                     lineNumber: 14,
@@ -36667,7 +36664,7 @@ const RestrauntCard = (props)=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                     className: "text-sm",
-                    children: props.cuisines?.join(" ")
+                    children: "American"
                 }, void 0, false, {
                     fileName: "src/components/RestrauntCard.js",
                     lineNumber: 15,
@@ -36683,7 +36680,7 @@ const RestrauntCard = (props)=>{
                             lineNumber: 17,
                             columnNumber: 11
                         }, undefined),
-                        props.avgRating
+                        "4.2"
                     ]
                 }, void 0, true, {
                     fileName: "src/components/RestrauntCard.js",
@@ -37388,7 +37385,7 @@ const RestaurantMenu = ()=>{
     });
     const { id } = (0, _reactRouterDom.useParams)();
     const [showIndex, setShowIndex] = (0, _react.useState)(null);
-    const resInfo = (0, _useRestaurantMenuDefault.default)(254009);
+    const resInfo = (0, _useRestaurantMenuDefault.default)(id);
     const [expandedSection, setExpandedSection] = (0, _react.useState)(null);
     const dummy = "Dummy Data";
     const [cardItems, setCardItems] = (0, _react.useState)({});
@@ -37762,20 +37759,15 @@ const RestaurantCategory = (props)=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex w-[300px] h-[50px]  flex-col ",
+                        className: "flex w-[300px] h-[50px]  flex-col cursor-pointer ",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                             htmlFor: title,
                             onClick: handleClick,
                             children: [
                                 title,
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                        className: "ri-arrow-down-s-line"
-                                    }, void 0, false, {
-                                        fileName: "src/components/RestaurantCategory.js",
-                                        lineNumber: 33,
-                                        columnNumber: 17
-                                    }, undefined)
+                                    className: "ml-2 bg-Green h-[3rem] p-2 rounded-lg shadow-lg text-White",
+                                    children: "Click to View"
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantCategory.js",
                                     lineNumber: 32,

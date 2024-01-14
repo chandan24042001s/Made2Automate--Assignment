@@ -50,7 +50,6 @@ const Applayout = () => {
         <Header />
         {/* <Search/> */}
         <Outlet />
-     
       </info1.Provider>
     </Provider>
   );
@@ -64,7 +63,7 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <RestaurantMenu/>,
+        element: <Body/>,
       },
       {
         path: "/about",
@@ -75,7 +74,7 @@ const AppRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/restaurant",
+        path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
       {
