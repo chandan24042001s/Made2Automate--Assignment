@@ -36,7 +36,7 @@ const RestaurantCategory = (props) => {
           </div>
         </div>
         {/* right card container */}
-        <div className="ml-10 w-full flex justify-between flex-wrap mr-10">
+        <div className="ml-0 w-full flex justify-between flex-wrap mr-0">
           {showItems &&
             filteredVegItems?.map((dish) => {
               return <MenuCard key={dish?.card?.info?.id} dishData={dish} />;

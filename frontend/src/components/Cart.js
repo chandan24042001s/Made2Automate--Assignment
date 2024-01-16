@@ -4,6 +4,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import MenuCard from "./MenuCard";
 import { clearCart } from "./../utils/cartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -15,8 +16,8 @@ const Cart = () => {
   };
 
   return (
-    <div id="cart">
-      <div id="cart-top">
+    <div id="cart" >
+      <div id="cart-top" className="flex" >
         <h1>{cartItems.length === 0 ? "Empty Cart" : "Cart"}</h1>
         {cartItems.length > 0 && (
           <button onClick={handleClearCart}>
@@ -25,9 +26,16 @@ const Cart = () => {
         )}
       </div>
 
-      {cartItems?.map((item) => {
+    <div className="flex flex-wrap">
+    {cartItems?.map((item) => {
         return <MenuCard key={item?.card?.info?.id} dishData={item} />;
       })}
+    </div>
+    <div className=" mt-10 flex justify-center align-middle">
+    { cartItems.length>0 && <Link to="/order">
+      <button onClick={handleClearCart} className="text-3xl h-16 px-5 py-2 bg-Green text-White rounded-lg hover:bg-Red hover:text-Black">Checkout</button>
+      </Link>}
+    </div>
     </div>
   );
 };
