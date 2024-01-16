@@ -37832,8 +37832,8 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _userJpeg = require("../Images/user.jpeg");
-var _userJpegDefault = parcelHelpers.interopDefault(_userJpeg);
+var _burgerPng = require("../Images/burger.png");
+var _burgerPngDefault = parcelHelpers.interopDefault(_burgerPng);
 var _reactRedux = require("react-redux");
 var _react = require("react");
 var _constant = require("../../constant");
@@ -37845,7 +37845,7 @@ const MenuCard = (props)=>{
     const { dishData } = props;
     const { name, price, description, imageId, defaultPrice } = dishData?.card?.info;
     const [itemCount, setItemCount] = (0, _react.useState)(0);
-    const imageSource = imageId === undefined ? (0, _userJpegDefault.default) : (0, _constant.swiggyIMageCDN) + imageId;
+    const imageSource = imageId === undefined ? (0, _burgerPngDefault.default) : (0, _constant.swiggyIMageCDN) + imageId;
     const dispatch = (0, _reactRedux.useDispatch)();
     const handleClick = (item)=>{
         // Dispatch an action
@@ -37945,7 +37945,7 @@ $RefreshReg$(_c, "MenuCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Images/user.jpeg":"6OX9e","react-redux":"bdVon","react":"21dqq","../../constant":"hVDs4","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5RXlr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","react":"21dqq","../../constant":"hVDs4","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Images/burger.png":"5zb2G"}],"5RXlr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addItem", ()=>addItem);
@@ -41913,7 +41913,10 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fsuX1":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5zb2G":[function(require,module,exports) {
+module.exports = require("fc775f2bad7c4b61").getBundleURL("kIKgZ") + "burger.2acde9ae.png" + "?" + Date.now();
+
+},{"fc775f2bad7c4b61":"lgJ39"}],"fsuX1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a307 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
